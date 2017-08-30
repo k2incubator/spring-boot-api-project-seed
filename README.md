@@ -15,7 +15,20 @@ Spring Boot API Project Seed 是一个基于Spring Boot & MyBatis的种子项目
 - 集成MyBatis、通用Mapper插件、PageHelper分页插件，实现单表业务零SQL
 - 提供代码生成器根据表名生成对应的Model、Mapper、MapperXML、Service、ServiceImpl、Controller等基础代码，其中Controller模板默认提供POST和RESTful两套，根据需求在```CodeGenerator.genController(tableName)```方法中自己选择，默认使用POST模板。代码模板可根据实际项目的需求来扩展，由于每个公司业务都不太一样，所以只提供了一些比较基础、通用的模板，主要是提供一个思路来减少重复代码的编写，我在实际项目的使用中，其实根据公司业务的抽象编写了大量的模板。另外，使用模板也有助于保持团队代码风格的统一
 - 另有彩蛋，待你探索
- 
+
+## `主要版本及新特性`
+- Spring Boot： `1.5.6.RELEASE`
+- mapper-spring-boot-starter: `1.1.3`
+- pagehelper-spring-boot-starter: `1.2.0`
+- model继承支持，添加类com.company.project.core.Model, 目的是简化每个表都含有同样几个字段时的冗余，比如每个表可能都含有id, create_time, update_time。
+- pagehelper， mapper均采用其相应spring boot starter
+- 修复`自定义Model名称方法genCode和多表代码生成genCode方法冲突`BUG，并支持一次生成所有数据表对应代码
+- 修改了freemarker模板，且Controller模板默认使用`controller-restful.ftl`
+- 修改配置文件 `properties` -> `yml` 
+- 默认关闭banner-mode， `banner-mode: "off"`
+- 代码格式优化
+
+
 ## 快速开始
 1. 克隆项目
 2. 对```test```包内的代码生成器```CodeGenerator```进行配置，主要是JDBC，因为要根据表名来生成代码
