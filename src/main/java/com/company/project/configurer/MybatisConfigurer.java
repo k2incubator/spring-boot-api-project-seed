@@ -4,10 +4,8 @@ import static com.company.project.core.ProjectConstant.MAPPER_INTERFACE_REFERENC
 import static com.company.project.core.ProjectConstant.MAPPER_PACKAGE;
 import static com.company.project.core.ProjectConstant.MODEL_PACKAGE;
 
-import com.github.pagehelper.PageInterceptor;
 import java.util.Properties;
 import javax.sql.DataSource;
-import org.apache.ibatis.plugin.Interceptor;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.springframework.context.annotation.Bean;
